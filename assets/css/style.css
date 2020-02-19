@@ -6,19 +6,25 @@ yellow: #FCEB48
 
 body {
     background-color: #806BA2; 
-    height: 100%;
-    width: 100%;
+    width: 80%;
+    overflow: hidden;
 }
 
 .game-box {
     display: grid;
-    height: 99%;
+    height: 95vh;
+}
 
+#frame {
 }
 .center-fit {
-    max-width: 90vw;
-    max-height: 90vh;
-    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: 90vh;
+    text-align: center;
 }
 
 .game-content {
@@ -29,7 +35,9 @@ body {
     width: 50vw;
     height: 50vh;
     text-align: center;
-    font-size:8vw;
   }
 
+  h1 {font-family: "Gregor Miller's Friends Font"; src: url("//db.onlinewebfonts.com/t/4df1037e4c7912d8cdbc227764488084.eot"); src: url("//db.onlinewebfonts.com/t/4df1037e4c7912d8cdbc227764488084.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/4df1037e4c7912d8cdbc227764488084.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/4df1037e4c7912d8cdbc227764488084.woff") format("woff"), url("//db.onlinewebfonts.com/t/4df1037e4c7912d8cdbc227764488084.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/4df1037e4c7912d8cdbc227764488084.svg#Gregor Miller's Friends Font") format("svg");
+    color: white;
+}
 
