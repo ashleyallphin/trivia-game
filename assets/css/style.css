@@ -5,7 +5,7 @@ yellow: #FCEB48
 */
 
 body {
-    background-color: #806BA2; 
+    background-color: #806ba2;
     width: 80%;
     overflow: hidden;
 }
@@ -32,21 +32,54 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50vw;
-    height: 50vh;
+    max-width: 40vw;
+    max-height: 40vh;
     text-align: center;
-  }
+}
 
-  h1 {font-family: "Gregor Miller's Friends Font"; src: url("//db.onlinewebfonts.com/t/4df1037e4c7912d8cdbc227764488084.eot"); src: url("//db.onlinewebfonts.com/t/4df1037e4c7912d8cdbc227764488084.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/4df1037e4c7912d8cdbc227764488084.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/4df1037e4c7912d8cdbc227764488084.woff") format("woff"), url("//db.onlinewebfonts.com/t/4df1037e4c7912d8cdbc227764488084.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/4df1037e4c7912d8cdbc227764488084.svg#Gregor Miller's Friends Font") format("svg");
+h1 {
+    font-family: "Gregor Miller's Friends Font";
+    src: url("//db.onlinewebfonts.com/t/4df1037e4c7912d8cdbc227764488084.eot");
+    src: url("//db.onlinewebfonts.com/t/4df1037e4c7912d8cdbc227764488084.eot?#iefix")
+    format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/4df1037e4c7912d8cdbc227764488084.woff2")
+    format("woff2"),
+    url("//db.onlinewebfonts.com/t/4df1037e4c7912d8cdbc227764488084.woff")
+    format("woff"),
+    url("//db.onlinewebfonts.com/t/4df1037e4c7912d8cdbc227764488084.ttf")
+    format("truetype"),
+    url("//db.onlinewebfonts.com/t/4df1037e4c7912d8cdbc227764488084.svg#Gregor Miller's Friends Font")
+    format("svg");
     color: white;
     font-size: 3vw;
 }
 
-.start-button {
-    background-color: black;
-    border: none;
-    border-radius: 10rem;
-    height: 5rem;
-    width: 5rem;
-    margin-bottom: 10rem;
+.round-button {
+  min-width: 60px;
+  max-width: 120px;
+  text-decoration: none;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  border-style: none;
+  color: white;
+  background-color: #000;
+  border-radius: 100%;
+  overflow: none;
+  text-align: center;
+  padding: 0;
+}
+.round-button:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: 100%;
+}
+span {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 90%;
+}
+.round-button:active {
+  background-color: #fec210;
 }
