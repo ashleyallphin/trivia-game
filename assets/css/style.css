@@ -39,5 +39,14 @@ body {
 
   h1 {font-family: "Gregor Miller's Friends Font"; src: url("//db.onlinewebfonts.com/t/4df1037e4c7912d8cdbc227764488084.eot"); src: url("//db.onlinewebfonts.com/t/4df1037e4c7912d8cdbc227764488084.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/4df1037e4c7912d8cdbc227764488084.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/4df1037e4c7912d8cdbc227764488084.woff") format("woff"), url("//db.onlinewebfonts.com/t/4df1037e4c7912d8cdbc227764488084.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/4df1037e4c7912d8cdbc227764488084.svg#Gregor Miller's Friends Font") format("svg");
     color: white;
+    font-size: 3vw;
 }
 
+.start-button {
+    background-color: black;
+    border: none;
+    border-radius: 10rem;
+    height: 5rem;
+    width: 5rem;
+    margin-bottom: 10rem;
+}
