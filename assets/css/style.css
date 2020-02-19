@@ -1,0 +1,35 @@
+/* COLORS  
+purple: #806BA2
+gold: #FEC210
+yellow: #FCEB48
+*/
+
+body {
+    background-color: #806BA2; 
+    height: 100%;
+    width: 100%;
+}
+
+.game-box {
+    display: grid;
+    height: 99%;
+
+}
+.center-fit {
+    max-width: 90vw;
+    max-height: 90vh;
+    margin: auto;
+}
+
+.game-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    height: 50vh;
+    text-align: center;
+    font-size:8vw;
+  }
+
+
