@@ -5,36 +5,14 @@ yellow: #FCEB48
 */
 
 body {
-    background-color: #806ba2;
-    width: 80%;
-    overflow: hidden;
+    background-color: #000;
 }
 
-.game-box {
-    display: grid;
-    height: 95vh;
-}
-
-#frame {
-}
-.center-fit {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90vw;
-    height: 90vh;
-    text-align: center;
-}
-
-.game-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 40vw;
-    max-height: 40vh;
-    text-align: center;
+.jumbotron {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    background-color: #000;
 }
 
 h1 {
@@ -54,32 +32,31 @@ h1 {
     font-size: 3vw;
 }
 
-.round-button {
-  min-width: 60px;
-  max-width: 120px;
-  text-decoration: none;
-  display: inline-block;
-  outline: none;
-  cursor: pointer;
-  border-style: none;
-  color: white;
-  background-color: #000;
-  border-radius: 100%;
-  overflow: none;
-  text-align: center;
-  padding: 0;
+h2 {
+    font-size: large;
+    color: white;
 }
-.round-button:before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  padding-top: 100%;
+
+#questions-text {
+    margin: 30px;
 }
-span {
-  display: inline-block;
-  vertical-align: middle;
-  max-width: 90%;
+
+h3 {
+    font-size: x-large;
+    color: white; 
 }
-.round-button:active {
-  background-color: #fec210;
+
+.timer {
+    margin: 50px;
+}
+
+.btn {
+    margin: 20px;
+    color: black;
+    background-color: white;
+    border: none;
+}
+
+.btn:hover {
+    background-color: blue;
 }
