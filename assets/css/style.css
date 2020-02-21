@@ -52,13 +52,13 @@ h2 {
 
 #questions-text {
     margin: 30px;
-    font-size: 25px;
+    font-size: 20px;
     color: white;
     font-family: 'Montserrat', ;
 }
 
 h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: white; 
     font-family: 'Montserrat', ;
     font-weight: 800;
@@ -68,7 +68,7 @@ h3 {
     background-color:#FABC16;
     border-radius: 5px;
     width: 100px;
-    padding: 15px 8px 8px 8px;
+    padding: 10px 0 5px 0;
     margin: 30px auto 50px auto;
     font-family: 'Montserrat', ;
     font-weight: 800;
