@@ -52,9 +52,10 @@ h2 {
 
 #questions-text {
     margin: 30px;
-    font-size: 20px;
+    font-size: 1.5rem;
     color: white;
-    font-family: 'Montserrat', ;
+    font-family: 'Montserrat',;
+    letter-spacing: .5px;
 }
 
 h3 {
@@ -64,15 +65,19 @@ h3 {
     font-weight: 800;
 }
 
-.timer {
+#timer {
     background-color:#FABC16;
     border-radius: 5px;
-    width: 100px;
+    width: 80px;
     padding: 10px 0 5px 0;
     margin: 30px auto 50px auto;
     font-family: 'Montserrat', ;
     font-weight: 800;
+    color: white;
+    font-size: 1.5rem;
 }
+
+
 
 .btn {
     margin: 20px;
@@ -97,6 +102,25 @@ h3 {
     border: #02B2E7 2px solid;
 }
 
-#logo {
-    width: 50vw;
+.start-button {
+    background-color: #FABC16;
+    border-radius: 5px;
+    width: 120px;
+    padding: 10px 0 5px 0;
+    margin: 30px auto 50px auto;
+    font-family: 'Montserrat', ;
+    font-weight: 800;
 }
+
+#logo {
+    width: 90%;
+    max-width: 50vw;
+}
+
+
+
+
+
+
+
+
