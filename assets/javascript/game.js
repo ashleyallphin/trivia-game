@@ -4,7 +4,7 @@
 
 //all possible questions, answer choices, correct answers
 var questions = [{
-    question: "Monica once threw a plate playing which game?",
+    question: "Monica once threw a plate while playing which of the following games?",
     answers: ["Pictionary", "Monopoly", "Yahtzee!", "Trivial Pursuit"],
     correctAnswer: "Pictionary"
 }, {
@@ -47,7 +47,7 @@ var questions = [{
 // variables of gameplay
 
 var game = {
-    questions: questions,
+    questions:questions,
     currentQuestion:0,
     counter:20,
     correct:0,
@@ -57,7 +57,7 @@ var game = {
         game.counter--;
         $("#timer").html(game.counter);
         if (game.counter === 0) {
-            console.log("Your time is up.");
+            console.log("Your time is up."); //working
             game.timeUp();
         }
     },
@@ -68,14 +68,19 @@ var game = {
         
         //post questions to page
         $("#questions-text").html("<h3>" + questions[game.currentQuestion].question + "</h3>");
-        console.log("questions-text");
+        console.log(questions[game.currentQuestion].question); //working
         
         //loop through answers (4 each question)
         for (var i = 0; i < questions[game.currentQuestion].answers.length; i++) {
             $("#answer-buttons").append
-            ('<button class = " answer-button " id = "button- ' + i + ' " data-name = " ' + questions[game.currentQuestion].answers[i] + '"' >
+            ('<button class = "btn btn-lg buttons text-center answer-button" id = "button" >'
+            + i +
+            ' " data-name = " ' + questions[game.currentQuestion].answers[i] + '" ' >
             + questions[game.currentQuestion].answers[i] + '</button>')
         }
+        console.log(questions[game.currentQuestion].answers); //working
+        console.log(questions[game.currentQuestion].correctAnswer); //working
+
     },
     nextQuestion: function() {
 
