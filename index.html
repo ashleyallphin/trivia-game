@@ -1,57 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>
+        F&middot;R&middot;I&middot;E&middot;N&middot;D&middot;S Trivia
+        </title>
+
+        <!-- favicon -->
+        <link rel="icon" type="image/png" href="assets/images/frame.ico" />
+
+        <!-- Google fonts CSS-->
+        <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:400,800&display=swap" rel="stylesheet">
+
+        <!-- FRIENDS web font -->
+        <link
+        href="//db.onlinewebfonts.com/c/4df1037e4c7912d8cdbc227764488084?family=Gregor+Miller's+Friends+Font"
+        rel="stylesheet"
+        type="text/css"/>
+
+        <!-- Bootstrap CSS -->
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous"
+        />
+
+        <!-- my CSS -->
+        <link rel="stylesheet" href="assets/css/style.css" />
     
-    <title>F&middot;R&middot;I&middot;E&middot;N&middot;D&middot;S Trivia</title>
+    </head>
 
-<!-- favicon -->
-    <link rel="icon" type="image/png" href="assets/images/frame-icon.ico">
-
-<!-- FRIENDS web font -->
-<link href="//db.onlinewebfonts.com/c/4df1037e4c7912d8cdbc227764488084?family=Gregor+Miller's+Friends+Font" rel="stylesheet" type="text/css"/>
-
-<!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-<!-- my CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-
-</head>
-
-
-<body>
-
-    <div class="row">
-        <div class="jumbotron">
+    <body>
+        <div class="row">
         
-            <h1 class="display-4 text-center">F<span style="color: red;">&middot;</span>R<span style="color: yellow;">&middot;</span>I<span style="color: blue;">&middot;</span>E<span style="color: red;">&middot;</span>N<span style="color: yellow;">&middot;</span>D<span style="color: blue;">&middot;</span>S TRIVIA</h1>
-            
-            <div class = "timer text-center" id="timer"><h3>Timer</h3></div>
-
+        <div class="jumbotron text-center">
         
-        <h2 class="lead text-center"id="questions-text">Questions can go here.</h2>
-        <hr class="my-4">
-<div class="buttons text-center">
-        <a class="btn btn-primary btn-lg" id ="choice1-text" href="#" role="button">Choice 1</a>
-        <a class="btn btn-primary btn-lg" id ="choice2-text" href="#" role="button">Choice 2</a>
-        <a class="btn btn-primary btn-lg" id ="choice3-text" href="#" role="button">Choice 3</a>
-        <a class="btn btn-primary btn-lg" id ="choice4-text" href="#" role="button">Choice 4</a>
+            <!-- <h1 class="display-4 text-center">F<span style="color: red;">&middot;</span>R<span style="color: yellow;">&middot;</span>I<span style="color: blue;">&middot;</span>E<span style="color: red;">&middot;</span>N<span style="color: yellow;">&middot;</span>D<span style="color: blue;">&middot;</span>S TRIVIA</h1> -->
+
+            <img id="logo"
+            src="/assets/images/FRIENDS_logo.svg"
+            alt="FRIENDS Logo"/>
+
+            <div class="timer text-center" id="timer"><h3>00</h3></div>
+
+            <div>
+                <h2 class="lead text-center" id="questions-text">
+                Placeholder for questions.
+                </h2>
+            </div>
+
+            <div class="buttons text-center lg-col-12">
+                
+                <a class="btn btn-lg md-col-12" id="choice1-text" href="#" role="button">Choice 1</a>
+
+                <a class="btn btn-lg md-col-12" id="choice2-text" href="#" role="button">Choice 2</a>
+
+                <a class="btn btn-lg md-col-12" id="choice1-text" href="#" role="button">Choice 3</a>
+
+                <a class="btn btn-lg md-col-12" id="choice2-text" href="#" role="button">Choice 4</a>>
+
+            </div>
+
         </div>
+    
     </div>
-    </div>
-    
-    
-    
-<!-- Bootstrap javaScript -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-<!-- My javaScript -->
+    <!-- Bootstrap javaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- My javaScript -->
     <script src="assets/javascript/game.js"></script>
-
-</body>
-
+  </body>
 </html>

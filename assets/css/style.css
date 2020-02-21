@@ -2,10 +2,17 @@
 purple: #806BA2
 gold: #FEC210
 yellow: #FCEB48
+
+red: #E91E23
+blue: #02B2E7
+yellow: #FABC16
+
+
 */
 
 body {
     background-color: #000;
+
 }
 
 .jumbotron {
@@ -36,25 +43,35 @@ h1 {
     url("//db.onlinewebfonts.com/t/4df1037e4c7912d8cdbc227764488084.svg#Gregor Miller's Friends Font")
     format("svg");
     color: white;
-    font-size: 3vw;
+    font-size: 20px;
 }
 
 h2 {
-    font-size: large;
-    color: white;
+
 }
 
 #questions-text {
     margin: 30px;
+    font-size: 25px;
+    color: white;
+    font-family: 'Montserrat', ;
 }
 
 h3 {
-    font-size: x-large;
+    font-size: 2rem;
     color: white; 
+    font-family: 'Montserrat', ;
+    font-weight: 800;
 }
 
 .timer {
-    margin: 50px;
+    background-color:#FABC16;
+    border-radius: 5px;
+    width: 100px;
+    padding: 15px 8px 8px 8px;
+    margin: 30px auto 50px auto;
+    font-family: 'Montserrat', ;
+    font-weight: 800;
 }
 
 .btn {
@@ -65,5 +82,21 @@ h3 {
 }
 
 .btn:hover {
-    background-color: blue;
+    background-color: #02B2E7;
+    color: white;
+
+}
+
+.btn:active {
+    background-color: #02B2E7;
+    border: #02B2E7 2px solid;
+    color: white;
+}
+.btn:focus {
+    background-color: #02B2E7;
+    border: #02B2E7 2px solid;
+}
+
+#logo {
+    width: 50vw;
 }
