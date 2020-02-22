@@ -66,6 +66,7 @@ var game = {
             game.timeUp();
         }
     },
+    
     loadQuestion: function() {
         
         //set timer to start at 20, counts down by 1000 milliseconds
@@ -79,9 +80,9 @@ var game = {
         //loop through answers (4 each question)
         for (var i = 0; i < questions[game.currentQuestion].answers.length; i++) {
             //append answers to page
-            $("#answer-buttons").append(
-            ('<button class="btn" id="answer-buttons"> ' + questions[game.currentQuestion].answers[i] + ' </button>')
-            )}
+            $('#answer-buttons').append(
+            '<button class="btn" id="answer-buttons" id="answer-buttons-'+i+'" data-name=" ' + questions[game.currentQuestion].answers[i] + '" > ' + questions[game.currentQuestion].answers[i] + ' </button>');
+            }
         console.log(questions[game.currentQuestion].answers); //working
         console.log(questions[game.currentQuestion].correctAnswer); //working
 
