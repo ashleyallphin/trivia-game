@@ -110,11 +110,49 @@ var game = {
 
     },
     timeUp: function() {
+        //clear the interval
+        clearInterval(timer);
+        //take the buttons away
+        $("#answer-buttons").empty();
+        //tell the user time is up
+        $("#questions-text").html("<h3 style='color: #FABC16'>You ran out of time!</h3>");
+        //tell the user the correct answer
+        $("#questions-text").append("<h4 style='color: #fff'><br>The correct answer was " + questions[game.currentQuestion].correctAnswer + ".</h4>");
+        //if it's the last question, take the user to the results
+        if (game.currentQuestion==questions.length-1){
+            setTimeout(game.results,2*1000);
+        //if it's not, take them to the next question
+        }   else {
+            setTimeout(game.nextQuestion,2*1000);
+        
+        }    
+
 
     },
     results: function() {
+     //reset timer
+     $("#timer").remove();
+     $("#questions-text").html("<h3 style='color: #02B2E7'><br>You got " + game.correct + " correct answers.</h3>");
+     //$("#questions-text").append("<h4 style='color: #fff'><br>Correct: " + game.correct + " </h4>");
+     //$("#questions-text").append("<h4 style='color: #fff'>Incorrect: " + game.incorrect + " </h4>");
+     if (game.correct === 10) {
+        $("#questions-text").append("<h4 style='color: #fff'>Well done!  Could you BE a bigger fan?</h4>");
+     }
+     else if (game.correct  < 9 && game.correct > 6) {
+        $("#questions-text").append("<h4 style='color: #fff'>Good enough.</h4>");
+     }
+     else {
+        $("#questions-text").append("<h4 style='color: #fff'>Not great.</h4>");
+     }
+
+     $("#questions-text").append('<div class="btn text-center start-button" style="width:200px" id="reset-button"><h3>PLAY AGAIN</h3></div>');
 
     },
+
+     //$("#questions-text").append("<h4 style='color: #fff'>Play again?</h4>")
+       
+    
+
     clicked: function(e) {
         //reset timer
         clearInterval(timer);
@@ -137,6 +175,7 @@ var game = {
         //if it's the last question, take the user to the results
         if (game.currentQuestion==questions.length-1){
             setTimeout(game.results,2*1000);
+        //if it's not, take them to the next question
         } else {
             setTimeout(game.nextQuestion,2*1000);
         }
@@ -145,17 +184,28 @@ var game = {
     answeredIncorrectly: function() {
         $("#answer-buttons").empty();
         $("#questions-text").html("<h3 style='color: #E91E23'>Wrong!</h3>");
+        $("#questions-text").append("<h4 style='color: #fff'><br>The correct answer was " + questions[game.currentQuestion].correctAnswer + ".</h4>");
         console.log("nope!"); //logging
         game.incorrect++;  //incorrect logging as 'undefined'
         console.log("incorrect :" + game.incorrect);
+        //if it's the last question, take the user to the results page
         if (game.currentQuestion==questions.length-1){
             setTimeout(game.results,2*1000);
+        
+        //if it's not, take them to the next question
         } else {
             setTimeout(game.nextQuestion,2*1000);
         }
     },
     reset: function() {
-
+        //reset everything to original values
+        game.currentQuestion = 0;
+        game.countdown = 0;
+        game.correct = 0;
+        game.incorrect = 0;
+        game.counter = 0;
+        //load first question
+        game.loadQuestion();
     },
 }
 
@@ -179,10 +229,12 @@ $("#start-button").on("click", function(){
 // document here made the code fire twice $(document).on('click', '#answer-buttons', function(e) {
 
 $("#answer-buttons").on('click', function(e) {
-
     game.clicked(e);
 })
 
+$(document).on('click', '#reset-button', function(){
+    game.reset();
+})
 
 
 
