@@ -58,6 +58,13 @@ h2 {
     letter-spacing: .5px;
 }
 
+#questions-text img {
+    margin: 20px auto 20px auto;
+    display: block;
+    max-width: 75%;
+    ;
+}
+
 h3 {
     font-size: 1.5rem;
     color: white; 
@@ -128,7 +135,7 @@ h4 {
 }
 
 #answer-buttons {
-    width: 70%;
+    width: 50%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -141,7 +148,7 @@ h4 {
 
 /*media queries*/
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 700px) {
     #logo {
         width: 90%;
     }
@@ -154,6 +161,15 @@ h4 {
 
         margin: 10px auto 20px auto;
 
+    }
+    #answer-buttons {
+        width: 80%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #start-button {
+        margin-top: 80px;
     }
 }
 
