@@ -91,26 +91,27 @@ h3 {
 
 
 .start-button {
-    background-color: #FABC16;
+    background-color:#FABC16;
     border-radius: 5px;
-    width: 120px;
-    padding: 10px 0 5px 0;
     margin: 30px auto 50px auto;
     font-family: 'Montserrat', ;
     font-weight: 800;
-}
+    color: white;
+    font-size: 2rem;
+    width: 120px;
+    height: 50px;
+    }
 
 #timer {
     background-color:#FABC16;
     border-radius: 5px;
-    margin: 0 auto 0 auto;
+    margin: 30px auto 50px auto;
     font-family: 'Montserrat', ;
     font-weight: 800;
     color: white;
-    font-size: 1.5rem;
-    width: 80px;
-    height: 40px;
-
+    font-size: 2rem;
+    width: 120px;
+    height: 50px;
 }
 
 #logo {
@@ -118,9 +119,20 @@ h3 {
     max-width: 80vw;
 }
 
+#answer-buttons {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 
+/*media queries*/
 
+@media only screen and (max-width: 700px) {
+    #logo {
+        width: 90%;
+    }
+}
 
 
 
