@@ -137,15 +137,15 @@ var game = {
      //$("#questions-text").append("<h4 style='color: #fff'>Incorrect: " + game.incorrect + " </h4>");
      if (game.correct === 10) {
         $("#questions-text").append("<h4 style='color: #fff'></h4>");
-        $("#questions-text").append('<img = src="/assets/images/group-clap.gif">');
+        $("#questions-text").append('<img = src="assets/images/group-clap.gif">');
 
      }
      else if (game.correct  < 10 && game.correct > 6) {
-        $("#questions-text").append('<img = src="/assets/images/ross-clap.gif">');
+        $("#questions-text").append('<img = src="assets/images/ross-clap.gif">');
 
      }
      else {
-        $("#questions-text").append('<img = src="/assets/images/loser.gif">');
+        $("#questions-text").append('<img = src="assets/images/loser.gif">');
 
      }
 
