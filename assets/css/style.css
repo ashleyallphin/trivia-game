@@ -58,7 +58,7 @@ h2 {
     letter-spacing: .5px;
 }
 
-#questions-text img {
+#questions-text {
     margin: 20px auto 20px auto;
     display: block;
     max-width: 75%;
@@ -81,9 +81,10 @@ h4 {
     margin: 20px;
 }
 
-#friends-trivia {
-    padding: 40px;
+.jumbotron  img {
     max-width: 90%;
+    padding: 20px;
+    margin: 0 auto 0 auto;
 }
 
 .btn {
