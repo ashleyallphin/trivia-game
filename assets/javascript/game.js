@@ -225,6 +225,7 @@ $("#start-button").on("click", function(){
         + game.counter +
         '</div>'
     ));
+    $("#friends-trivia").remove();
     game.loadQuestion();
 })
 
