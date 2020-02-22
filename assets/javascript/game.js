@@ -72,12 +72,10 @@ var game = {
         
         //loop through answers (4 each question)
         for (var i = 0; i < questions[game.currentQuestion].answers.length; i++) {
-            $("#answer-buttons").append
-            ('<button class = "btn btn-lg buttons text-center answer-button" id = "button" >'
-            + i +
-            ' " data-name = " ' + questions[game.currentQuestion].answers[i] + '" ' >
-            + questions[game.currentQuestion].answers[i] + '</button>')
-        }
+            //append answers to page
+            $("#answer-buttons").append(
+            ('<button class="btn" id="answer-buttons"> ' + questions[game.currentQuestion].answers[i] + '</button>')
+            )}
         console.log(questions[game.currentQuestion].answers); //working
         console.log(questions[game.currentQuestion].correctAnswer); //working
 
