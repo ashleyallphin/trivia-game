@@ -55,13 +55,8 @@ var game = {
     countdown: function() {
         //counter property in variable game decreases by one, until it reaches 0, in which case, it will run the timeUp
         game.counter--;
-        $("#timer").html(
-            ('<div class="text-center" id="timer">'
-            + game.counter +
-            '</div>'
-            )
-            );
-            if (game.counter === 0) {
+        $("#timer").html(game.counter);
+        if (game.counter === 0) {
             console.log("Your time is up."); //working
             game.timeUp();
         }
@@ -72,9 +67,8 @@ var game = {
         timer = setInterval(game.countdown, 1000);
         
         //post questions to page
-        $("#questions-text").html(
-            "<h3>" + questions[game.currentQuestion].question + "</h3>");
-            console.log(questions[game.currentQuestion].question); //working
+        $("#questions-text").html("<h3>" + questions[game.currentQuestion].question + "</h3>");
+        console.log(questions[game.currentQuestion].question); //working
         
         //loop through answers (4 each question)
         for (var i = 0; i < questions[game.currentQuestion].answers.length; i++) {
@@ -118,12 +112,8 @@ var game = {
 //remove start button when start button is clicked
 
 $("#start-button").on("click", function(){
-    $("#start-button").replaceWith(('<div class="text-center" id="timer">'
-    + game.counter +
-    '</div>'
-    ));
+    $("#start-button").remove();
     game.loadQuestion();
-    countdown();
 })
 
 
