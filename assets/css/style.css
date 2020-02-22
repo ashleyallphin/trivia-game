@@ -51,7 +51,6 @@ h2 {
 }
 
 #questions-text {
-    margin: 30px;
     font-size: 1.5rem;
     color: white;
     font-family: 'Montserrat',;
@@ -61,7 +60,7 @@ h2 {
 #questions-text img {
     margin: 20px auto 20px auto;
     display: block;
-    max-width: 75%;
+    max-width: 90%;
     ;
 }
 
@@ -83,7 +82,6 @@ h4 {
 
 .jumbotron  img {
     max-width: 90%;
-    padding: 20px;
     margin: 0 auto 0 auto;
 }
 
@@ -156,7 +154,7 @@ h4 {
 
 @media only screen and (max-width: 700px) {
     #logo {
-        width: 90%;
+        width: 100%;
     }
     .start-button {
 
