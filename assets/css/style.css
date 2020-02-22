@@ -83,6 +83,7 @@ h4 {
 
 #friends-trivia {
     padding: 40px;
+    max-width: 90%;
 }
 
 .btn {
