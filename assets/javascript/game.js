@@ -98,6 +98,15 @@ var game = {
 
     },
     nextQuestion: function() {
+        //reset counter to 30
+        game.counter=20;
+        //set HTML back at 30 too
+        
+        $("#timer").html(game.counter);
+        game.currentQuestion++;
+        game.loadQuestion();
+
+
 
     },
     timeUp: function() {
@@ -119,19 +128,31 @@ var game = {
 
     },
     answeredCorrectly: function() {
+        $("#answer-buttons").empty();
+
         console.log("correct!");
-        clearInterval(timer);
+        $("#questions-text").html("<h3 style='color: #02B2E7'>Correct!</h3>");
         game.correct++; 
-        console.log("correct :" + correct)
-        $("#answer-buttons").replaceWith("<h3> 'Correct!' </h3>");
+        console.log("correct :" + game.correct);
+        //if it's the last question, take the user to the results
+        if (game.currentQuestion==questions.length-1){
+            setTimeout(game.results,2*1000);
+        } else {
+            setTimeout(game.nextQuestion,2*1000);
+        }
 
     },
     answeredIncorrectly: function() {
-        clearInterval(timer); //stopping timer
+        $("#answer-buttons").empty();
+        $("#questions-text").html("<h3 style='color: #E91E23'>Wrong!</h3>");
         console.log("nope!"); //logging
         game.incorrect++;  //incorrect logging as 'undefined'
-        console.log("incorrect :" + incorrect)
-        $("#answer-buttons").remove;
+        console.log("incorrect :" + game.incorrect);
+        if (game.currentQuestion==questions.length-1){
+            setTimeout(game.results,2*1000);
+        } else {
+            setTimeout(game.nextQuestion,2*1000);
+        }
     },
     reset: function() {
 
@@ -144,19 +165,21 @@ var game = {
 // FUNCTIONS
 // ==============================================
 
-//remove start button when start button is clicked
-
+//replace start button with timer on click
 $("#start-button").on("click", function(){
     $("#start-button").replaceWith(('<div class="text-center" id="timer">'
-    + game.counter +
-    '</div>'
+        + game.counter +
+        '</div>'
     ));
     game.loadQuestion();
 })
 
 //event handling function
 // https://stackoverflow.com/questions/10323392/in-javascript-jquery-what-does-e-mean
-$(document).on('click', '#answer-buttons', function(e) {
+// document here made the code fire twice $(document).on('click', '#answer-buttons', function(e) {
+
+$("#answer-buttons").on('click', function(e) {
+
     game.clicked(e);
 })
 
