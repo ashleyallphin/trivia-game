@@ -29,7 +29,8 @@ var questions = [{
     correctAnswer: "18 pages",
 }, {
     question: "How many roses does Ross send to Emily?",
-    answers: ["72", "12 dozen", "100", "56"]
+    answers: ["72", "12 dozen", "100", "56"],
+    correctAnswer: "72"
 }, {
     question: "What is Chandler's middle name?",
     answers: ["Toby", "Muriel", "Edward", "Gene"],
@@ -37,7 +38,7 @@ var questions = [{
 }, {
     question: "Who was the Holiday Armadillo?",
     answers: ["Pheobe", "Ross", "Chandler", "Joey"],
-    correctAnswer: ["Ross"]
+    correctAnswer: "Ross"
 }, {
     question: "Which volume of a set of encyclopedias does Joey purchase?",
     answers: ["A", "J", "T", "V"],
@@ -72,19 +73,28 @@ var game = {
         //set timer to start at 20, counts down by 1000 milliseconds
         timer = setInterval(game.countdown, 1000);
         
+        /* pick a random question
+        var randomQuestion = 
+        (i = questions[Math.floor(Math.random() * questions.length)]);
+        console.log("working");
+        console.log(randomQuestion);
+        */
+        
+
         //post questions to page
         $("#questions-text").html(
             "<h3>" + questions[game.currentQuestion].question + "</h3>");
             console.log(questions[game.currentQuestion].question); //working
         
-        //loop through answers (4 each question)
+        //loop through answers (4 each question) and append to page
         for (var i = 0; i < questions[game.currentQuestion].answers.length; i++) {
             //append answers to page
             $('#answer-buttons').append(
-            '<button class="btn" id="answer-buttons" id="answer-buttons-'+i+'" data-name=" ' + questions[game.currentQuestion].answers[i] + '" > ' + questions[game.currentQuestion].answers[i] + ' </button>');
+            '<button class="btn" id="answer-buttons" id="answer-buttons-'+i+'" data-name="' + questions[game.currentQuestion].answers[i] + '" > ' + questions[game.currentQuestion].answers[i] + ' </button>');
+            
+
+        console.log(questions[game.currentQuestion].answers[i]);
             }
-        console.log(questions[game.currentQuestion].answers); //working
-        console.log(questions[game.currentQuestion].correctAnswer); //working
 
     },
     nextQuestion: function() {
@@ -96,14 +106,32 @@ var game = {
     results: function() {
 
     },
-    clicked: function() {
+    clicked: function(e) {
+        //reset timer
+        clearInterval(timer);
+        //if answer clicked equals correct answer, run answeredCorrectly()
+        if ($(e.target).data("name") == questions[game.currentQuestion].correctAnswer) {
+            game.answeredCorrectly();
+        //if not, run answeredIncorrectly();    
+        } else {
+            game.answeredIncorrectly();
+        }
 
     },
     answeredCorrectly: function() {
+        console.log("correct!");
+        clearInterval(timer);
+        game.correct++; 
+        console.log("correct :" + correct)
+        $("#answer-buttons").replaceWith("<h3> 'Correct!' </h3>");
 
     },
     answeredIncorrectly: function() {
-
+        clearInterval(timer); //stopping timer
+        console.log("nope!"); //logging
+        game.incorrect++;  //incorrect logging as 'undefined'
+        console.log("incorrect :" + incorrect)
+        $("#answer-buttons").remove;
     },
     reset: function() {
 
@@ -124,7 +152,12 @@ $("#start-button").on("click", function(){
     '</div>'
     ));
     game.loadQuestion();
-    countdown();
+})
+
+//event handling function
+// https://stackoverflow.com/questions/10323392/in-javascript-jquery-what-does-e-mean
+$(document).on('click', '#answer-buttons', function(e) {
+    game.clicked(e);
 })
 
 

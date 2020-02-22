@@ -133,7 +133,19 @@ h3 {
     #logo {
         width: 90%;
     }
+    .start-button {
+
+        margin: 10px auto 20px auto;
+
+        }
+    #timer {
+
+        margin: 10px auto 20px auto;
+
+    }
 }
+
+
 
 
 
