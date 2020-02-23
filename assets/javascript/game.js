@@ -64,7 +64,7 @@ var game = {
             )
             );
             if (game.counter === 0) {
-            console.log("Your time is up."); //working
+            //console.log("Your time is up."); //working
             game.timeUp();
         }
     },
@@ -75,7 +75,7 @@ var game = {
         //shuffle items in array so questions are asked randomly without repeating
         for (var j, x, i = questions.length; i; j = parseInt(Math.random() * i), x = questions[--i], questions[i] = questions[j], questions[j] = x);
 
-        console.log (questions) //working
+        //console.log (questions) //working
     },
 
     loadQuestion: function() {
@@ -88,16 +88,20 @@ var game = {
         //post questions to page
         $("#questions-text").html(
             "<h3>" + questions[game.currentQuestion].question + "</h3>");
-            console.log(questions[game.currentQuestion].question); //working
+            //console.log(questions[game.currentQuestion].question); //working
         
+        //sort answers into random order
+        for (var j, x, i = questions[game.currentQuestion].answers.length; i; j = parseInt(Math.random() * i), x = questions[game.currentQuestion].answers[--i], questions[game.currentQuestion].answers[i] = questions[game.currentQuestion].answers[j], questions[game.currentQuestion].answers[j] = x);
+        
+            
         //loop through answers (4 each question) and append to page
         for (var i = 0; i < questions[game.currentQuestion].answers.length; i++) {
             //append answers to page
             $('#answer-buttons').append(
             '<button class="btn" id="answer-buttons" id="answer-buttons-'+i+'" data-name="' + questions[game.currentQuestion].answers[i] + '" > ' + questions[game.currentQuestion].answers[i] + ' </button>');
             
+            console.log(questions[game.currentQuestion].answers[i])
 
-        console.log(questions[game.currentQuestion].answers[i]);
             }
 
     },
@@ -109,10 +113,8 @@ var game = {
         $("#timer").html(game.counter);
         game.currentQuestion++;
         game.loadQuestion();
-
-
-
     },
+
     timeUp: function() {
         //clear the interval
         clearInterval(timer);
@@ -176,10 +178,10 @@ var game = {
     answeredCorrectly: function() {
         $("#answer-buttons").empty();
 
-        console.log("correct!");
+        //console.log("correct!");
         $("#questions-text").html("<h3 style='color: #02B2E7'>Correct!</h3>");
         game.correct++; 
-        console.log("correct :" + game.correct);
+        //console.log("correct :" + game.correct);
         //if it's the last question, take the user to the results
         if (game.currentQuestion==questions.length-1){
             setTimeout(game.results,2*1000);
@@ -193,9 +195,9 @@ var game = {
         $("#answer-buttons").empty();
         $("#questions-text").html("<h3 style='color: #E91E23'>Wrong!</h3>");
         $("#questions-text").append("<h4 style='color: #fff'><br>The correct answer is " + questions[game.currentQuestion].correctAnswer + ".</h4>");
-        console.log("nope!"); //logging
+        //console.log("nope!"); //logging
         game.incorrect++;  //incorrect logging as 'undefined'
-        console.log("incorrect :" + game.incorrect);
+        //console.log("incorrect :" + game.incorrect);
         //if it's the last question, take the user to the results page
         if (game.currentQuestion==questions.length-1){
             setTimeout(game.results,2*1000);
