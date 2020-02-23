@@ -53,6 +53,7 @@ var game = {
     counter:20,
     correct:0,
     incorrect:0,
+
     countdown: function() {
         //counter property in variable game decreases by one, until it reaches 0, in which case, it will run the timeUp
         game.counter--;
@@ -68,19 +69,22 @@ var game = {
         }
     },
     
+
+
+    shuffleQuestions() {
+        //shuffle items in array so questions are asked randomly without repeating
+        for (var j, x, i = questions.length; i; j = parseInt(Math.random() * i), x = questions[--i], questions[i] = questions[j], questions[j] = x);
+
+        console.log (questions) //working
+    },
+
     loadQuestion: function() {
         
+        //this.shuffleQuestions(); -- this will radomize on every question
+
         //set timer to start at 20, counts down by 1000 milliseconds
         timer = setInterval(game.countdown, 1000);
         
-        /* pick a random question
-        var randomQuestion = 
-        (i = questions[Math.floor(Math.random() * questions.length)]);
-        console.log("working");
-        console.log(randomQuestion);
-        */
-        
-
         //post questions to page
         $("#questions-text").html(
             "<h3>" + questions[game.currentQuestion].question + "</h3>");
@@ -209,6 +213,7 @@ var game = {
         game.incorrect = 0;
         game.counter = 0;
         //load first question
+        game.shuffleQuestions();
         game.loadQuestion();
     },
 }
@@ -226,6 +231,7 @@ $("#start-button").on("click", function(){
         '</div>'
     ));
     $("#friends-trivia").remove();
+    game.shuffleQuestions();
     game.loadQuestion();
 })
 

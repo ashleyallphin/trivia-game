@@ -53,6 +53,7 @@ var game = {
     counter:20,
     correct:0,
     incorrect:0,
+
     countdown: function() {
         //counter property in variable game decreases by one, until it reaches 0, in which case, it will run the timeUp
         game.counter--;
@@ -68,19 +69,22 @@ var game = {
         }
     },
     
+
+
+    shuffleQuestions() {
+        //shuffle items in array so questions are asked randomly without repeating
+        for (var j, x, i = questions.length; i; j = parseInt(Math.random() * i), x = questions[--i], questions[i] = questions[j], questions[j] = x);
+
+        console.log (questions) //working
+    },
+
     loadQuestion: function() {
         
+        //this.shuffleQuestions(); -- this will radomize on every question
+
         //set timer to start at 20, counts down by 1000 milliseconds
         timer = setInterval(game.countdown, 1000);
         
-        /* pick a random question
-        var randomQuestion = 
-        (i = questions[Math.floor(Math.random() * questions.length)]);
-        console.log("working");
-        console.log(randomQuestion);
-        */
-        
-
         //post questions to page
         $("#questions-text").html(
             "<h3>" + questions[game.currentQuestion].question + "</h3>");
@@ -117,7 +121,7 @@ var game = {
         //tell the user time is up
         $("#questions-text").html("<h3 style='color: #FABC16'>You ran out of time!</h3>");
         //tell the user the correct answer
-        $("#questions-text").append("<h4 style='color: #fff'><br>The correct answer was " + questions[game.currentQuestion].correctAnswer + ".</h4>");
+        $("#questions-text").append("<h4 style='color: #fff'><br>The correct answer is " + questions[game.currentQuestion].correctAnswer + ".</h4>");
         //if it's the last question, take the user to the results
         if (game.currentQuestion==questions.length-1){
             setTimeout(game.results,2*1000);
@@ -136,13 +140,17 @@ var game = {
      //$("#questions-text").append("<h4 style='color: #fff'><br>Correct: " + game.correct + " </h4>");
      //$("#questions-text").append("<h4 style='color: #fff'>Incorrect: " + game.incorrect + " </h4>");
      if (game.correct === 10) {
-        $("#questions-text").append("<h4 style='color: #fff'>Well done!  Could you BE a bigger fan?</h4>");
+        $("#questions-text").append("<h4 style='color: #fff'></h4>");
+        $("#questions-text").append('<img = src="assets/images/group-clap.gif">');
+
      }
-     else if (game.correct  < 9 && game.correct > 6) {
-        $("#questions-text").append("<h4 style='color: #fff'>Good enough.</h4>");
+     else if (game.correct  < 10 && game.correct > 6) {
+        $("#questions-text").append('<img = src="assets/images/ross-clap.gif">');
+
      }
      else {
-        $("#questions-text").append("<h4 style='color: #fff'>Not great.</h4>");
+        $("#questions-text").append('<img = src="assets/images/loser.gif">');
+
      }
 
      $("#questions-text").append('<div class="btn text-center start-button" style="width:200px" id="reset-button"><h3>PLAY AGAIN</h3></div>');
@@ -184,7 +192,7 @@ var game = {
     answeredIncorrectly: function() {
         $("#answer-buttons").empty();
         $("#questions-text").html("<h3 style='color: #E91E23'>Wrong!</h3>");
-        $("#questions-text").append("<h4 style='color: #fff'><br>The correct answer was " + questions[game.currentQuestion].correctAnswer + ".</h4>");
+        $("#questions-text").append("<h4 style='color: #fff'><br>The correct answer is " + questions[game.currentQuestion].correctAnswer + ".</h4>");
         console.log("nope!"); //logging
         game.incorrect++;  //incorrect logging as 'undefined'
         console.log("incorrect :" + game.incorrect);
@@ -205,6 +213,7 @@ var game = {
         game.incorrect = 0;
         game.counter = 0;
         //load first question
+        game.shuffleQuestions();
         game.loadQuestion();
     },
 }
@@ -221,6 +230,8 @@ $("#start-button").on("click", function(){
         + game.counter +
         '</div>'
     ));
+    $("#friends-trivia").remove();
+    game.shuffleQuestions();
     game.loadQuestion();
 })
 
