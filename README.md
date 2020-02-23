@@ -28,6 +28,7 @@ Boot Camp UTA-VIRT-FSF-PT-01-2020-U-LOL
 ##### Game design notes
 
 * The game is deisgned to ask questions in random order.
+* Answer choices display in random orders from game to game.
 * The player is allowed 20 seconds to answer a question.  I chose not to distinguish between incorrect and unanswered questions.  As far as I'm concerned, an unanswered question resulting for timer run out is the same as an inocrrect question.  I didn't want to call out the number of incorrect answers on my results page, so I chose to display the correct number of anwers out of the total questions only.  Incorrect answers can be determined by the difference.
 * Result GIF is based on 1-5, 6-9, and 10 wins. A different image is offered for each correct threshold.
 * Initial page design created with Bootstrap.
