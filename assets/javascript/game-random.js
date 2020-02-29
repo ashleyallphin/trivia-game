@@ -100,7 +100,7 @@ var game = {
             $('#answer-buttons').append(
             '<button class="btn" id="answer-buttons" id="answer-buttons-'+i+'" data-name="' + questions[game.currentQuestion].answers[i] + '" > ' + questions[game.currentQuestion].answers[i] + ' </button>');
             
-            console.log(questions[game.currentQuestion].answers[i])
+           // console.log(questions[game.currentQuestion].answers[i])
 
             }
 
