@@ -45,7 +45,7 @@ var questions = [{
     correctAnswer: "V"
 }];
 
-// variables of gameplay
+//variables of gameplay
 
 var game = {
     questions:questions,
@@ -137,7 +137,7 @@ var game = {
     },
     results: function() {
      //reset timer
-     $("#timer").remove();
+     $("#timer").hide();
      $("#questions-text").html("<h3 style='color: #02B2E7'><br>You answered " + game.correct + " of 10 questions correctly.</h3>");
      //$("#questions-text").append("<h4 style='color: #fff'><br>Correct: " + game.correct + " </h4>");
      //$("#questions-text").append("<h4 style='color: #fff'>Incorrect: " + game.incorrect + " </h4>");
@@ -210,13 +210,16 @@ var game = {
     reset: function() {
         //reset everything to original values
         game.currentQuestion = 0;
-        game.countdown = 0;
         game.correct = 0;
         game.incorrect = 0;
-        game.counter = 0;
-        //load first question
+        game.counter = 20;
+        //reveal the timer again
+        $("#timer").show();;
+        //shuffle the questions and start them over
         game.shuffleQuestions();
         game.loadQuestion();
+        game.countdown();
+
     },
 }
 
